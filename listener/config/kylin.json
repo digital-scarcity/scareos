@@ -1,0 +1,9 @@
+{
+    // get eosws_token from: https://dfuse.io/#subscribe
+    "eosws_token":"eyJhbGciOiJLTVNFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJiZXRhLXVzZXJzLmVvc3dzLmlvIiwiZXhwIjoxNTQyMDgyMTc3LCJqdGkiOiJjZjgzOTdhZi1iMjQ5LTRmNTUtODhlYy00NGY3ZWQ2YzhhMzUiLCJpYXQiOjE1Mzk0OTAxNzcsImlzcyI6ImVvc3dzLmlvIiwic3ViIjoibWF4QGRpZ2l0YWxzY2FyY2l0eS5pbyJ9.XEA5VzfaEYtRWWprRsvW2Ssoh-UScO7fOHVgiOUGMQGqqpvR0gr98-43g4RLxQ40DnhMApO7HfJXt38rWwgLaw",
+    "eosws_address_prefix":"wss://kylin.eos.dfuse.io/v1/stream",
+    "origin":"https://ggrocket.ai",
+    "listen_to_contract":"ggrocket1111",
+    "listen_to_action":"newpurrecord",
+    "post_to":"http://localhost:3000/handler"
+}
