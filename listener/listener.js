@@ -5,13 +5,6 @@ var figlet      = require('figlet');
 var config      = require ('config');
 
 const eosws_token = config.get('eosws_token');
-//const eosws_token = "eyJhbGciOiJLTVNFUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJiZXRhLXVzZXJzLmVvc3dzLmlvIiwiZXhwIjoxNTQyMDgyMTc3LCJqdGkiOiJjZjgzOTdhZi1iMjQ5LTRmNTUtODhlYy00NGY3ZWQ2YzhhMzUiLCJpYXQiOjE1Mzk0OTAxNzcsImlzcyI6ImVvc3dzLmlvIiwic3ViIjoibWF4QGRpZ2l0YWxzY2FyY2l0eS5pbyJ9.XEA5VzfaEYtRWWprRsvW2Ssoh-UScO7fOHVgiOUGMQGqqpvR0gr98-43g4RLxQ40DnhMApO7HfJXt38rWwgLaw"; 
-//const eoswsAddress = `wss://kylin.eos.dfuse.io/v1/stream?token=${eosws_token}`
-//const origin = "https://ggrocket.ai" //config.get('origin');
-//const contract = "ggrocket1111"; //config.get('listen_to_contract');
-//const action = "newpurrecord" ; //config.get('listen_to_action');
-
-
 const eoswsAddress = config.get('eosws_address_prefix') + "?token=" + eosws_token;
 const origin = config.get('origin');
 const contract = config.get('listen_to_contract');
@@ -58,17 +51,17 @@ ws.onmessage = (message) => {
         console.log (`-- Received event on ${contract}::${action} --`)
         console.log (JSON.stringify(data, null, 4));
       
-        // if (config.has('post_to')) {
-        //     axios.post('http://localhost:4000/handler', {
-        //         data
-        //     })
-        //     .then(function (response) {
-        //         console.log(response);
-        //     })
-        //     .catch(function (error) {
-        //         console.log(error);
-        //     });
-        // }
+        if (config.has('post_to')) {
+            axios.post(config.get('post_to'), {
+                data
+            })
+            .then(function (response) {
+                console.log(response.status);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
         console.log ("Listening on EOS for: ");
         console.log ("  Contract    :   ", contract);
         console.log ("  Action      :   ", action);

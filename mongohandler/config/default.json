@@ -1,0 +1,5 @@
+{
+    "mongo_url":"mongodb://analysis:yourpw@ds237563.mlab.com:37563/yourdb",
+    "mongo_db":"changeme",
+    "mongo_collection": "changeme"
+}
