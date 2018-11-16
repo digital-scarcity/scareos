@@ -1,0 +1,9 @@
+{
+    // get eosws_token from: https://dfuse.io/#subscribe
+    "eosws_token":"",
+    "eosws_endpoint":"mainnet.eos.dfuse.io",
+    "origin":"https://example.com",
+    "listen_to_contract":"eosio.token",
+    "listen_to_action":"transfer",
+    "post_to":"http://localhost:4000/handler"
+}
